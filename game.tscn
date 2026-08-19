@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://bfiiofvvhpc04"]
+
+[ext_resource type="Script" uid="uid://dvpxhio4pna0i" path="res://game.gd" id="1_7jktm"]
+[ext_resource type="PackedScene" uid="uid://bvu6wro7yso7d" path="res://scenes/bucket.tscn" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://c8yr5aasl1765" path="res://scenes/bucket.gd" id="2_e2o6t"]
+[ext_resource type="Texture2D" uid="uid://c17pfaxfovsh2" path="res://assets/asdfghjk.jpg" id="2_hve3p"]
+[ext_resource type="AudioStream" uid="uid://comdjl7xjna30" path="res://assets/sounds/CatchSound.mp3" id="2_vef74"]
+[ext_resource type="AudioStream" uid="uid://dgkp2rp0hwm1y" path="res://assets/sounds/endSound.mp3" id="3_hve3p"]
+[ext_resource type="Script" uid="uid://chj7fedn1e4rq" path="res://generate yellows.gd" id="4_fc0e3"]
+[ext_resource type="AudioStream" uid="uid://cqmj4bmek5wcc" path="res://assets/sounds/quack sound.mp3" id="4_mfdv2"]
+[ext_resource type="AudioStream" uid="uid://cxw7j2d6u05ut" path="res://assets/sounds/timerSound.mp3" id="5_iotsf"]
+[ext_resource type="AudioStream" uid="uid://bavnw7n2mufbl" path="res://assets/sounds/MISS.mp3" id="8_hve3p"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_iotsf"]
+
+[node name="game" type="Node2D" unique_id=807486047]
+script = ExtResource("1_7jktm")
+
+[node name="CanvasLayer2" type="TextureRect" parent="." unique_id=1296879280]
+offset_left = -498.0
+offset_top = 239.0
+offset_right = -498.0
+offset_bottom = 239.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2" unique_id=780938881]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Asdfghjk" type="Sprite2D" parent="CanvasLayer2/TextureRect" unique_id=1858840204]
+position = Vector2(610.99994, -312)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("2_hve3p")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=986848854]
+position = Vector2(101, 45)
+physics_material_override = SubResource("PhysicsMaterial_iotsf")
+
+[node name="bucket" parent="StaticBody2D" unique_id=1116906295 instance=ExtResource("1_80nbo")]
+position = Vector2(11, 39)
+script = ExtResource("2_e2o6t")
+
+[node name="yellow ducks" type="Node2D" parent="." unique_id=1300322894]
+position = Vector2(122, -82)
+script = ExtResource("4_fc0e3")
+
+[node name="Timer" type="Timer" parent="yellow ducks" unique_id=602736998]
+
+[node name="TimerSound" type="AudioStreamPlayer" parent="." unique_id=180911601]
+stream = ExtResource("5_iotsf")
+
+[node name="EndSound" type="AudioStreamPlayer" parent="." unique_id=407431545]
+stream = ExtResource("3_hve3p")
+
+[node name="MissSound" type="AudioStreamPlayer" parent="." unique_id=625609108]
+stream = ExtResource("8_hve3p")
+volume_db = -9.905
+
+[node name="CatchSound" type="AudioStreamPlayer" parent="." unique_id=570957717]
+stream = ExtResource("2_vef74")
+volume_db = -6.19
+
+[node name="QuackSound" type="AudioStreamPlayer" parent="." unique_id=1267081529]
+stream = ExtResource("4_mfdv2")
+volume_db = -6.19
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1155391647]
+layer = 11
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=926620463]
+position = Vector2(114, -76)
+zoom = Vector2(1.75, 1.75)
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=1893128632]
+modulate = Color(1, 0, 0, 1)
+offset_left = 330.0
+offset_top = -247.0
+offset_right = 370.0
+offset_bottom = -212.0
+theme_override_font_sizes/font_size = 25
+
+[node name="TimeLabel" type="Label" parent="." unique_id=804199083]
+modulate = Color(1, 0, 0, 1)
+anchors_preset = -1
+anchor_top = 0.41300002
+anchor_bottom = 0.41300002
+offset_left = -201.0
+offset_top = -246.0
+offset_right = -161.0
+offset_bottom = -211.0
+theme_override_font_sizes/font_size = 25

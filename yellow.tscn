@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://iuw5dy1elpld"]
+
+[ext_resource type="Texture2D" uid="uid://055okoifvyym" path="res://assets/duck art/yellow.png" id="1_14bb6"]
+[ext_resource type="Script" uid="uid://bnbaud2pt2y" path="res://yellow.gd" id="2_b5d33"]
+[ext_resource type="AudioStream" uid="uid://cqmj4bmek5wcc" path="res://assets/sounds/quack sound.mp3" id="3_2ja30"]
+[ext_resource type="AudioStream" uid="uid://djhpbxuayq7rc" path="res://assets/sounds/MissSound.mp3" id="4_i2vur"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1mt4g"]
+size = Vector2(43, 19)
+
+[node name="Yellow" type="Area2D" unique_id=279631087]
+script = ExtResource("2_b5d33")
+
+[node name="Yellowduckie" type="Sprite2D" parent="." unique_id=1287947238]
+position = Vector2(-5, -2)
+texture = ExtResource("1_14bb6")
+
+[node name="yellowCollision" type="CollisionShape2D" parent="." unique_id=1478753113]
+position = Vector2(2, 9)
+shape = SubResource("RectangleShape2D_1mt4g")
+
+[node name="QuackSound" type="AudioStreamPlayer" parent="." unique_id=1535758402]
+stream = ExtResource("3_2ja30")
+volume_db = -6.19
+
+[node name="MissSound" type="AudioStreamPlayer" parent="." unique_id=113151866]
+stream = ExtResource("4_i2vur")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

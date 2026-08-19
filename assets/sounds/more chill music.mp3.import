@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bpyvlq54bo7n5"
+path="res://.godot/imported/more chill music.mp3-7a5413232022ae9cc7f58b5e60c2937d.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/more chill music.mp3"
+dest_files=["res://.godot/imported/more chill music.mp3-7a5413232022ae9cc7f58b5e60c2937d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

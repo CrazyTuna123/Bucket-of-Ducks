@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://crke7r0r8ol0q"]
+
+[ext_resource type="Texture2D" uid="uid://d4eq53dju4gvr" path="res://assets/bucket art.png" id="1_f50pn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ai2n"]
+size = Vector2(60, 86)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ij6vw"]
+atlas = ExtResource("1_f50pn")
+region = Rect2(0, 0, 120, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7ai2n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ij6vw")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="bucket" type="CharacterBody2D" unique_id=1116906295]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=515805959]
+position = Vector2(0, -44)
+shape = SubResource("RectangleShape2D_7ai2n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1495271867]
+position = Vector2(1, -53)
+sprite_frames = SubResource("SpriteFrames_7ai2n")

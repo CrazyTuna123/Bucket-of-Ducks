@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bvu6wro7yso7d"]
+
+[ext_resource type="Script" uid="uid://c8ojkfd127k2i" path="res://scripts/bucket.gd" id="1_4mj0c"]
+[ext_resource type="Texture2D" uid="uid://d4eq53dju4gvr" path="res://assets/bucket art.png" id="1_ojsi1"]
+[ext_resource type="AudioStream" uid="uid://djhpbxuayq7rc" path="res://assets/sounds/MissSound.mp3" id="3_axt1m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ai2n"]
+size = Vector2(99, 86)
+
+[node name="bucket" type="CharacterBody2D" unique_id=1116906295]
+script = ExtResource("1_4mj0c")
+
+[node name="bucketCollision" type="CollisionShape2D" parent="." unique_id=515805959]
+position = Vector2(0.5, -44)
+shape = SubResource("RectangleShape2D_7ai2n")
+
+[node name="BucketArt" type="Sprite2D" parent="." unique_id=794536186]
+position = Vector2(0, -52)
+texture = ExtResource("1_ojsi1")
+
+[node name="MissSound" type="AudioStreamPlayer" parent="." unique_id=1669473141]
+stream = ExtResource("3_axt1m")
